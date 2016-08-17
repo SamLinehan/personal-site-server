@@ -6,7 +6,7 @@ var cors = require("cors");
 var nodemailer = require("nodemailer");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({origin: true, allowedHeaders: ["X-Requested-With", "Content-Type" ], methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"]}));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
